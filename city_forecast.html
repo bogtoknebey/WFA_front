@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/connector.js" defer></script>
+    <script src="js/getWeatherDays.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="menu-link" href="index.html"><h2 class="main">
+            <img src="./images/home.png" alt="Home" class="home_img">
+            Home
+        </h2></a>
+        <nav><ul class="menu">
+            <li class="first menu"><a class="menu-link" href="cities.html">Cities</a></li>
+            <li class="menu"><a class="menu-link" href="forecasters.html">Forecasters</a></li>
+        </ul></nav>
+    </header>
+
+
+    <div class="main-block" id="main-block">
+        <p id="city" class="nopadding-paragraph">Имя города</p>
+        <p id="forecast_date" class="nopadding-paragraph">Дата</p>
+
+        <div id="allForcasts" class="medium-div">
+            <p id="f_0">Имя Предсказателя 0</p>
+            <div id="forecast_date_0"></div>
+            <table class="hour_day" id="hour_day_0">
+                <tr>
+                    <td>Hour</td><td>Temperature</td>
+                </tr>
+                <tr>
+                    <td>0</td><td>19</td>
+                </tr>
+                <tr>
+                    <td>3</td><td>17</td>
+                </tr>
+                <tr>
+                    <td>6</td><td>16</td>
+                </tr>
+                <tr>
+                    <td>9</td><td>21</td>
+                </tr>
+                <tr>
+                    <td>12</td><td>24</td>
+                </tr>
+                <tr>
+                    <td>15</td><td>25</td>
+                </tr>
+                <tr>
+                    <td>18</td><td>25</td>
+                </tr>
+                <tr>
+                    <td>21</td><td>22</td>
+                </tr>
+            </table>
+    
+            <p id="f_1">Имя Предсказателя 1</p>
+            <div id="forecast_date_1"></div>
+            <table class="hour_day" id="hour_day_1">
+                <tr>
+                    <td>Hour</td><td>Temperature</td>
+                </tr>
+                <tr>
+                    <td>0</td><td>19</td>
+                </tr>
+                <tr>
+                    <td>3</td><td>17</td>
+                </tr>
+                <tr>
+                    <td>6</td><td>16</td>
+                </tr>
+                <tr>
+                    <td>9</td><td>21</td>
+                </tr>
+                <tr>
+                    <td>12</td><td>24</td>
+                </tr>
+                <tr>
+                    <td>15</td><td>25</td>
+                </tr>
+                <tr>
+                    <td>18</td><td>25</td>
+                </tr>
+                <tr>
+                    <td>21</td><td>22</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    
+    <div class="load-block" id="load-block"></div>
+
+
+    <footer>
+        <div class="footer-text">A</div>
+    </footer>
+</body>
+</html>

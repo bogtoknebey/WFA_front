@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WFA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/connector.js" defer></script>
+    <script src="js/GetCity.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="menu-link" href="index.html"><h2 class="main">
+            <img src="./images/home.png" alt="Home" class="home_img">
+            Home
+        </h2></a>
+        <nav><ul class="menu">
+            <li class="first menu"><a class="menu-link" href="cities.html">Cities</a></li>
+            <li class="menu"><a class="menu-link" href="forecasters.html">Forecasters</a></li>
+        </ul></nav>
+    </header>
+
+
+    <div class="main-block" id="main-block">
+        <div class="page-header" id="name">City Name</div>
+        <div class="medium-div">
+            <p class="nopadding-paragraph">
+                <a class="map-link" id="link" href="https://www.google.com.ua/maps/@49.9429641,36.3729404,13z?entry=ttu">On Google Maps</a>
+                <br/>
+            </p>
+
+            <ul id="forecasters_ul">
+                <li class="forecasters_li_first" id="fc_0">
+                    Предсказатель 1 <input type="checkbox" id="fc_check_0">
+                </li>
+                <li class="forecasters_li" id="fc_1">
+                    Предсказатель 2 <input type="checkbox" id="fc_check_1">
+                </li>
+                <li class="forecasters_li" id="fc_2">
+                    Предсказатель 3 <input type="checkbox" id="fc_check_2">
+                </li>
+            </ul>
+            <a id="city_forecast_link">
+                <input type="submit" class="submitButton" title="Принять" value="Get Forecast">
+            </a>
+            <a id="city_analytics_link">
+                <input type="submit" class="submitButton" title="Принять" value="Get Analytics">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="load-block" id="load-block"></div>
+
+    
+    <footer>
+        <div class="footer-text">A</div>
+    </footer>
+</body>
+</html>
