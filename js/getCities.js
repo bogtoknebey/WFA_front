@@ -15,12 +15,9 @@ async function setCities(){
 
         let liStr = "";
         liStr += '<li><p class="default-paragraph">';
-        // innerStr += '<a class="li-link" id="city_' + ind + '" onclick="selectCity()" href="city.html">' + upCaseName + '</a>';
         liStr += '<a class="li-link" id="' + id + '">' + upCaseName + '</a>';
         liStr += '</p></li>';
         list.innerHTML += liStr;
-
-        //document.getElementById(id).addEventListener("click", selectCity);
     });
 
     citiesJson.forEach((city, ind) => {
@@ -32,6 +29,19 @@ async function setCities(){
         });
     });
 
+    // search event
+    let search = document.getElementById("citySearch");
+    search.addEventListener("search", function() {
+        let searchStr = event.target.value;
+        let allCities = document.getElementsByClassName("li-link");
+        for (var i = 0; i < allCities.length; i++) {
+            let currCity = allCities[i];
+            if (currCity.innerHTML.toLowerCase().includes(searchStr.toLowerCase()))
+                currCity.style.display = "inline";
+            else
+                currCity.style.display = "none";
+        }
+    });
 
     document.getElementById("load-block").style.display = "none";
     document.getElementById("main-block").style.display = "inline";
