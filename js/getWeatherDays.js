@@ -101,5 +101,6 @@ async function SetWeatherDay(forecasterId, cityId){
      */
 }
 let cityId = JSON.parse(sessionStorage.cityId);
-let forecasterId = JSON.parse(sessionStorage.forecasterId); 
+let forecasterId = JSON.parse(sessionStorage.forecasterId);
+console.log(forecasterId);
 window.onload = SetWeatherDay(forecasterId, cityId);

@@ -54,7 +54,7 @@ async function SetCity(id){
             sessionStorage.forecasterId = JSON.stringify(0);
         }
         if (document.getElementById('fc_check_1').checked){
-            sessionStorage.forecasterId = JSON.stringify(0);
+            sessionStorage.forecasterId = JSON.stringify(1);
         }
         if (document.getElementById('fc_check_2').checked){
             sessionStorage.forecasterId = JSON.stringify(2);
@@ -67,7 +67,7 @@ async function SetCity(id){
             sessionStorage.forecasterId = JSON.stringify(0);
         }
         if (document.getElementById('fc_check_1').checked){
-            sessionStorage.forecasterId = JSON.stringify(0);
+            sessionStorage.forecasterId = JSON.stringify(1);
         }
         if (document.getElementById('fc_check_2').checked){
             sessionStorage.forecasterId = JSON.stringify(2);
