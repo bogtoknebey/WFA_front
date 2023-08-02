@@ -20,14 +20,23 @@ async function setCities(){
         list.innerHTML += liStr;
     });
 
+    // click(go throught the link) and mousemove(color change) events
     citiesJson.forEach((city, ind) => {
         let id = "city_" +  ind;
-        document.getElementById(id).addEventListener("click", function() {
+        let currCity = document.getElementById(id);
+        currCity.addEventListener("click", function() {
             let cityId = event.target.id.slice(5);
             sessionStorage.cityId = JSON.stringify(cityId);
             location.replace("./city.html")
         });
+        currCity.addEventListener("mousemove", function() {
+            event.target.style.backgroundColor = "white";
+        });
+        currCity.addEventListener("mouseout", function() {
+            event.target.style.backgroundColor = event.target.parentElement.style.backgroundColor;
+        });
     });
+
 
     // search event
     let search = document.getElementById("citySearch");

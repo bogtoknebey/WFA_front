@@ -1,5 +1,26 @@
 async function SetAnalytics(forecasterId, cityId, daysAgo) {
     var input = await getDeviationsJSON(forecasterId, cityId, daysAgo);
+    console.log(input);
+
+    let deviationData = document.getElementById("deviation_data");
+    let deviationDataInnerStr = "";
+
+    if (!Object.hasOwn(input, '0')) {
+        deviationData.innerHTML = "There is no data by selected parameters.";
+        document.getElementById("load-block").style.display = "none";
+        document.getElementById("main-block").style.display = "inline";
+        return;
+    } else {
+        console.log(Object.keys(input[0]).length);
+        if (Object.keys(input[0]).length == 0) {
+
+            deviationData.innerHTML = "There is no data by selected parameters.";
+            document.getElementById("load-block").style.display = "none";
+            document.getElementById("main-block").style.display = "inline";
+            return;
+        }
+    }   
+
     var forecaster = await getForecasterJSON(forecasterId);
     var city = await getCityJSON(cityId);
 
@@ -8,8 +29,7 @@ async function SetAnalytics(forecasterId, cityId, daysAgo) {
     console.log(deviations);
     console.log(biggestDeviations);
 
-    let deviationData = document.getElementById("deviation_data");
-    let deviationDataInnerStr = "";
+
 
     let cityName =  city.UkrainianTranslit;
     let forecasterName = forecaster.Name;

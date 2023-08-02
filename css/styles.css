@@ -243,14 +243,19 @@ a.li-link {
     margin-left: 0%;
     margin-right: 0%;
 
-    padding-top: 0%;
-    padding-bottom: 0%;
-    padding-left: 0%;
-    padding-right: 0%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+
 
     text-decoration: none;
     font-size: large;
-    color: blue;
+    color: rgb(2, 65, 2);
+    /* cursor: grab; */
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-color: black;
 }
 
 a.map-link {
