@@ -9,6 +9,7 @@ async function SetAnalytics(forecasterId, cityId, daysAgo) {
         deviationData.innerHTML = "There is no data by selected parameters.";
         document.getElementById("load-block").style.display = "none";
         document.getElementById("main-block").style.display = "inline";
+        document.getElementById("switch_table_btn").style.display = "none";
         return;
     } else {
         console.log(Object.keys(input[0]).length);
@@ -17,6 +18,7 @@ async function SetAnalytics(forecasterId, cityId, daysAgo) {
             deviationData.innerHTML = "There is no data by selected parameters.";
             document.getElementById("load-block").style.display = "none";
             document.getElementById("main-block").style.display = "inline";
+            document.getElementById("switch_table_btn").style.display = "none";
             return;
         }
     }   
@@ -26,10 +28,11 @@ async function SetAnalytics(forecasterId, cityId, daysAgo) {
 
     var deviations = input[0];
     var biggestDeviations = input[1];
+    var weatherHours = input[2];
+
     console.log(deviations);
     console.log(biggestDeviations);
-
-
+    console.log(weatherHours);
 
     let cityName =  city.UkrainianTranslit;
     let forecasterName = forecaster.Name;
@@ -44,12 +47,16 @@ async function SetAnalytics(forecasterId, cityId, daysAgo) {
     // biggestDeviation
     let allDeviationElement = document.getElementById("allDeviation");
     let biggestDeviationElement = document.getElementById("biggestDeviation");
+    let allWeatherHours = document.getElementById("allWeatherHours");
     let allDeviationInnerStr = "";
     let biggestDeviationInnerStr = "";
+    let allWeatherHoursInnerStr = "";
 
+
+    // Diviations table
     allDeviationInnerStr += "</br>";
     allDeviationInnerStr += "All deviations";
-    allDeviationInnerStr += '<table class="hour_day">';
+    allDeviationInnerStr += '<table id="deviations_table" class="hour_day">';
 
     // header of table
     allDeviationInnerStr += "<tr><td>Time of deviation</td>";
@@ -82,6 +89,68 @@ async function SetAnalytics(forecasterId, cityId, daysAgo) {
     allDeviationInnerStr += '</table>';
     allDeviationInnerStr += '</br>';
     allDeviationElement.innerHTML = allDeviationInnerStr;
+    allDeviationElement.style.display = "inline";
+
+
+    // WeatherHours table
+    allWeatherHoursInnerStr += "</br>";
+    allWeatherHoursInnerStr += "All forecasts";
+    allWeatherHoursInnerStr += '<table id="weather_hours_table" class="hour_day">';
+
+    // header of table
+    allWeatherHoursInnerStr += "<tr><td>Time of forecast</td>";
+    let firtsWeatherHoursSet = weatherHours[Object.keys(weatherHours)[0]];
+    for (let num in firtsWeatherHoursSet) {
+        allWeatherHoursInnerStr += "<td>" + timeFormat(firtsWeatherHoursSet[num].Hour) +"</td>"
+    }
+    allWeatherHoursInnerStr += "</tr>"
+    
+    // body of table
+    for (let dateTime in weatherHours) {
+        allWeatherHoursInnerStr += "<tr>";
+        allWeatherHoursInnerStr += "<td>" + dateTime.split('T')[1] + "</td>";
+        let currentWeatherHours = weatherHours[dateTime];
+        for (let num in currentWeatherHours) {
+            allWeatherHoursInnerStr += "<td>" + currentWeatherHours[num].Temperature + "</td>";
+        }
+        allWeatherHoursInnerStr += "</tr>";
+    }
+
+    // add the biggest deviation row
+    allWeatherHoursInnerStr += "<tr></tr>";
+    allWeatherHoursInnerStr += "<tr>";
+    allWeatherHoursInnerStr += "<td>Biggest of all time</td>";
+    for (let hour in biggestDeviations) {
+        allWeatherHoursInnerStr += '<td>' + biggestDeviations[hour] + '</td>';
+    }
+    allWeatherHoursInnerStr += "</tr>";
+
+    allWeatherHoursInnerStr += '</table>';
+    allWeatherHoursInnerStr += '</br>';
+    allWeatherHours.innerHTML = allWeatherHoursInnerStr;
+    allWeatherHours.style.display = "none";
+
+
+    // <div id="allDeviation" class="medium-div">
+    // </div>
+    // <div id="allWeatherHours" class="medium-div">
+    // </div>
+    // add Listener to switch button
+    document.getElementById("switch_table_btn").addEventListener("click", function() {
+        let tables = [document.getElementById("allDeviation"), document.getElementById("allWeatherHours")];
+        for (let tableNum in tables) {
+            let display = tables[tableNum].style.display;
+            if (display == "none") {
+                display = "inline";
+            } else if (display == "inline"){
+                display = "none";
+            }
+            tables[tableNum].style.display = display;
+        }
+    });
+
+
+
 
     // biggestDeviationInnerStr += "Biggest Deviations during all day";
     // biggestDeviationInnerStr += '<table class="hour_day">';
