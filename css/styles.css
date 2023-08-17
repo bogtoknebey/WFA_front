@@ -79,6 +79,50 @@ a.menu-link {
     color: green;
 }
 
+li.table-tab {
+    display: inline;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+
+    margin-top: 2px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+    border: 2px solid black;
+    text-decoration: none;
+    font-size: x-large;
+    color: green;
+    background-color: rgb(222, 222, 222);
+}
+
+li.table-tab-first {
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+
+    margin-top: 2px;
+    margin-bottom: 0px;
+    margin-left: 0%;
+    margin-right: 2px;
+
+    text-decoration: none;
+    font-size: x-large;
+    color: green;
+    background-color: rgb(222, 222, 222);
+}
+
+a.table-tab-link {
+    margin-left: 0%;
+    padding-left: 0%;
+    margin-bottom: 0%;
+    text-decoration: none;
+    font-size: x-large;
+    color: green;
+}
 
 img.home_img {
     border: 1px solid #ddd;
@@ -118,9 +162,9 @@ div.main-block{
     padding-left: 0%;
     padding-right: 0%;
 
-    /*background-color: yellow;*/
     display: none;
     background-image: url("../images/night_and_day_3.png");
+    /* opacity: 0.4; */
     position: fixed;
     width: 100%;
     height: 80%;
@@ -128,6 +172,7 @@ div.main-block{
     overflow-y: auto;
     /*overflow-y: scroll;*/
 }
+
 
 div.load-block{
     margin-top: 0%;
@@ -148,6 +193,9 @@ div.load-block{
     height: 80%;
 }
 
+div.hidden {
+    display: none;
+}
 /*Footer part*/
 
 
@@ -211,6 +259,11 @@ div.page-header{
 div.medium-div{
     background-color:rgb(226, 213, 213);
     font-size: large;
+}
+
+div#all-forcasts-tables {
+    background-color:rgb(226, 213, 213);
+    font-size: x-large;
 }
 
 p.default-paragraph{
@@ -320,6 +373,19 @@ td{
 
 ul.forecasters_ul{
     font-size: medium;
+}
+
+ul.table-menu{
+    list-style: none;
+    margin-top: 0%;
+    margin-bottom: 0.5%;
+    margin-left: 0%;
+    margin-right: 0%;
+
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
 }
 
 li.forecasters_li{
