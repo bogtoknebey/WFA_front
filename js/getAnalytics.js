@@ -181,6 +181,6 @@ async function SetAnalytics(forecasterId, cityId, daysAgo) {
 
 let cityId = JSON.parse(sessionStorage.cityId);
 let forecasterId = JSON.parse(sessionStorage.forecasterId); 
-let daysAgo = 1;
+let daysAgo = 0;
 
 window.onload = SetAnalytics(forecasterId, cityId, daysAgo);
